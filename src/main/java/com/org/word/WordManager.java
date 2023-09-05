@@ -28,8 +28,10 @@ public class WordManager {
         System.out.println("*** 영단어 마스터 ***\n");
         while(true){
             int menu = selectMenu();
-            if(menu == 0)
+            if(menu == 0){
                 System.out.print("\n프로그램 종료! 다음에 만나요~\n");
+                break;
+            }
             else if(menu == 4){
                 wordCRUD.addItem();
             }
