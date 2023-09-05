@@ -13,7 +13,7 @@ public class WordCURD implements ICURD{
 
     @Override
     public Object add() {
-        System.out.print("=> 난이도(1,2,3) & 새 단어 입력 : ");
+        System.out.print("\n=> 난이도(1,2,3) & 새 단어 입력 : ");
         int level = s.nextInt();
         String word = s.nextLine();
 
@@ -43,6 +43,11 @@ public class WordCURD implements ICURD{
 
     @Override
     public void listAll() {
-
+        System.out.println("--------------------------------");
+        for(int i=0; i<list.size(); i++){
+            System.out.print((i+1) + " ");
+            System.out.println(list.get(i).toString());
+        }
+        System.out.println("--------------------------------");
     }
 }
