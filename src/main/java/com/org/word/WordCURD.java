@@ -42,6 +42,11 @@ public class WordCURD implements ICURD{
     }
 
     @Override
+    public void searchItem() {
+
+    }
+
+    @Override
     public void listAll() {
         System.out.println("\n--------------------------------");
         for(int i=0; i<list.size(); i++){

@@ -5,5 +5,6 @@ public interface ICURD {
     public void addItem();
     public void updateItem();
     public void deleteItem();
+    public void searchItem();
     public void listAll();
 }
