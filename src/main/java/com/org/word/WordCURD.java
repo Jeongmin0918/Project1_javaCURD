@@ -43,11 +43,11 @@ public class WordCURD implements ICURD{
 
     @Override
     public void listAll() {
-        System.out.println("--------------------------------");
+        System.out.println("\n--------------------------------");
         for(int i=0; i<list.size(); i++){
             System.out.print((i+1) + " ");
             System.out.println(list.get(i).toString());
         }
-        System.out.println("--------------------------------");
+        System.out.println("--------------------------------\n");
     }
 }
