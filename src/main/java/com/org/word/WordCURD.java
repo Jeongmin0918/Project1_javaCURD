@@ -1,11 +1,13 @@
 package com.org.word;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordCURD implements ICURD{
     ArrayList<Word> list;
     Scanner s;
+    final String fname = "Dictionary.txt";
     WordCURD(Scanner s){
        list = new ArrayList<>();
        this.s = s;
@@ -15,7 +17,17 @@ public class WordCURD implements ICURD{
     public Object add() {
         System.out.print("\n=> 난이도(1,2,3) & 새 단어 입력 : ");
         int level = s.nextInt();
-        String word = s.nextLine();
+        String word = s.next();
+        s.nextLine();
+
+        while(true){
+            if(level >= 4 || level <= 0){
+                System.out.print("\n잘못된 레벨입니다. 다시 입력해주세요!!\n" + "=> 난이도(1,2,3) : ");
+                level = s.nextInt();
+                s.nextLine();
+            }
+            else break;
+        }
 
         System.out.print("뜻 입력 : ");
         String meaning = s.nextLine();
@@ -85,39 +97,84 @@ public class WordCURD implements ICURD{
     }
     @Override
     public void listAll() {
-        System.out.println("\n--------------------------------");
+        System.out.println("\n------------------------------------------");
         for(int i=0; i<list.size(); i++){
-            System.out.print((i+1) + " ");
+            if(i<9) System.out.print("0" + (i+1) + " ");
+            else System.out.print((i+1) + " ");
             System.out.println(list.get(i).toString());
         }
-        System.out.println("--------------------------------\n");
+        System.out.println("------------------------------------------\n");
     }
     public ArrayList<Integer> listAll(String keyword) {
         ArrayList<Integer> idlist = new ArrayList<>();
         int j = 0;
 
-        System.out.println("--------------------------------");
+        System.out.println("\n------------------------------------------");
         for(int i=0; i<list.size(); i++){
             if(!list.get(i).getWord().contains(keyword)) continue;
+            else if(j<9) System.out.println("0" + (j+1) + " " + list.get(i).toString());
             else System.out.println((j+1) + " " + list.get(i).toString());
             j++;
             idlist.add(i);
         }
-        System.out.println("--------------------------------");
+        System.out.println("------------------------------------------\n");
 
         return idlist;
     }
     public void listAll(int level) {
         int j = 0;
 
-        System.out.println("--------------------------------");
+        System.out.println("\n------------------------------------------");
         for(int i=0; i<list.size(); i++){
             int ilevel = list.get(i).getLevel();
             if(ilevel != level) continue;
+            else if(j<9) System.out.println("0" + (j+1) + " " + list.get(i).toString());
             else System.out.println((j+1) + " " + list.get(i).toString());
             j++;
         }
-        System.out.println("--------------------------------");
+        System.out.println("------------------------------------------\n");
     }
 
+    public void loadFile(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fname));
+
+            int count = 0;
+            String line;
+
+            while(true){
+                //파일을 한줄씩 읽어오기
+                line = br.readLine();
+                if(line == null) break; //파일이 끝나면 탈출
+
+                //|표시로 단어 나누기
+                String data[] = line.split("\\|");
+                int level = Integer.parseInt((data[0]));
+                String word = data[1];
+                String meaning = data[2];
+                list.add(new Word(0, level, word, meaning));
+                count++;
+            }
+
+            br.close();
+            System.out.println("==>" + count + "개 데이터 로딩 완료!!!\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void saveFile() {
+        try {
+            PrintWriter pr = new PrintWriter(new FileWriter(fname));
+
+            for(Word one : list){
+                pr.write(one.toFileString() + "\n");
+            }
+
+            pr.close();
+            System.out.println("\n==> 데이터 저장 완료!!!\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

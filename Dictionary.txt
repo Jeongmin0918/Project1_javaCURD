@@ -1,0 +1,67 @@
+2|outlet|(가스, 감정 등의) 배출구, 표출 방법; 상점
+2|overhead|머리 위에, (하늘) 높이
+2|utter|완전한, 전적인; 말하다; (소리 등을) 내다
+2|representation|표시, 표현; 대리, 대변, 대표
+2|recycle|재활용하다, 재생하다
+2|interference|간섭, 방해
+2|productive|생산적인, 결실이 많은; 비옥한
+2|overwhelming|압도적인
+2|income|수입, 소득
+2|foresee|예견[예지]하다
+2|outdo|…보다 뛰어나다, …을 능가하다
+2|revival|부활, 되살아남; 재상영, 재상연
+2|international|국제적인, 국가 간의
+2|indoor|실내의
+2|interaction|상호 작용, 상호 영향
+2|overwhelm|압도하다; 당황하게 하다
+2|overwork|과로하다[시키다]; 과로
+2|infection|감염; 오염
+2|product|생산품, 제품
+2|produce|생산[제조]하다; 농산물
+2|proposal|제안, 청혼
+2|extroverted|외향적인, 외향성의
+2|representative|대표자, 대리인; 국회의원; 대표하는
+2|progressive|진보적인, 점진적인
+2|replacement|교체, 교환(물); 후임자
+2|predict|예언하다, 예측(예상)하다
+2|revive|소생[회복]시키다; 되살아나게 하다
+3|bilingual|2개 국어를 쓰는, 두 나라 말을 하는
+3|boastful|자랑하는, 허풍 떠는
+3|censure|비난, 책망, 비난하다, 나무라다
+3|chuckle|낄낄 웃다, (혼자서)기뻐하다
+3|proposition|제의, 제안, 진술
+3|consent|동의, 승낙, 동의하다, 찬성하다
+3|consult|참고하다, 상담하다, 진찰 받다
+3|contradiction|부인, 부정, 모순
+3|convincing|설득력 있는, 납득이 가게 하는
+3|demonstrate|증명하다, 설명하다, 시위하다
+3|deny|부정하다, 부인하다
+3|dictation|받아쓰기, 명령
+3|oath|법정의 선서, 맹세
+3|evaluate|평가하다
+3|exaggerate|과장하다
+3|emphasis|강조, 강세
+3|glorify|찬미하다, 칭찬하다
+3|implore|애원하다, 탄원하다
+3|interactive|상호작용하는, 대화식의
+3|interpretation|해석, 통역
+1|any|어떤
+1|bake|굽다
+1|humor|유우머
+1|just|이제 막,단지
+1|weight|무게
+1|ago|이전에
+1|walk|걷다
+1|but|그러나 다만 (-을)제외하고
+1|young|젊은
+1|engineer|기사
+1|money|돈
+1|shy|수줍은
+1|bowl|그릇
+1|floor|마룻바닥
+1|curious|호기심 많은
+1|dinner|저녁
+1|museum|박물관
+1|present|현재
+1|print|인쇄하다, 프린트하다
+1|soccer|축구
