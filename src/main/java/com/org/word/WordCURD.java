@@ -49,18 +49,21 @@ public class WordCURD implements ICURD{
         String keyword = s.next();
 
         ArrayList<Integer> idlist = this.listAll(keyword);
+        if(idlist.isEmpty()) return;
+        else{
+            System.out.print("==> 수정할 번호 선택 : ");
+            int num = s.nextInt();
+            s.nextLine();
 
-        System.out.print("==> 수정할 번호 선택 : ");
-        int num = s.nextInt();
-        s.nextLine();
 
+            System.out.print("\n==> 뜻 입력 : ");
+            String meaning = s.nextLine();
 
-        System.out.print("\n==> 뜻 입력 : ");
-        String meaning = s.nextLine();
+            list.get(idlist.get(num-1)).setMeaning(meaning);
 
-        list.get(idlist.get(num-1)).setMeaning(meaning);
+            System.out.println("\n단어가 수정되었습니다.\n");
+        }
 
-        System.out.println("\n단어가 수정되었습니다.\n");
     }
 
     @Override
@@ -70,18 +73,21 @@ public class WordCURD implements ICURD{
 
         ArrayList<Integer> idlist = this.listAll(keyword);
 
-        System.out.print("==> 삭제할 번호 선택 : ");
-        int num = s.nextInt();
-        s.nextLine();
+        if(idlist.isEmpty()) return;
+        else {
+            System.out.print("==> 삭제할 번호 선택 : ");
+            int num = s.nextInt();
+            s.nextLine();
 
-        System.out.print("\n==> 정말로 삭제하시겠습니까 (Y/n) : ");
-        String answer = s.nextLine();
+            System.out.print("\n==> 정말로 삭제하시겠습니까 (Y/n) : ");
+            String answer = s.nextLine();
 
-        if(!answer.equalsIgnoreCase("y"))
-            System.out.println("\n취소되었습니다.\n");
-        else{
-            list.remove((int)idlist.get(num-1));
-            System.out.println("\n단어가 삭제되었습니다.\n");
+            if(!answer.equalsIgnoreCase("y"))
+                System.out.println("\n취소되었습니다.\n");
+            else{
+                list.remove((int)idlist.get(num-1));
+                System.out.println("\n단어가 삭제되었습니다.\n");
+            }
         }
     }
     public void levelSearch() {
@@ -112,11 +118,12 @@ public class WordCURD implements ICURD{
         System.out.println("\n------------------------------------------");
         for(int i=0; i<list.size(); i++){
             if(!list.get(i).getWord().contains(keyword)) continue;
-            else if(j<9) System.out.println("0" + (j+1) + " " + list.get(i).toString());
+            else if(j<9)System.out.println("0" + (j+1) + " " + list.get(i).toString());
             else System.out.println((j+1) + " " + list.get(i).toString());
             j++;
             idlist.add(i);
         }
+        if(j == 0) System.out.println("검색한 단어가 존재하지 않습니다 !!!");
         System.out.println("------------------------------------------\n");
 
         return idlist;
@@ -132,6 +139,7 @@ public class WordCURD implements ICURD{
             else System.out.println((j+1) + " " + list.get(i).toString());
             j++;
         }
+        if(j == 0) System.out.println("존재하지 않는 레벨입니다 !!!");
         System.out.println("------------------------------------------\n");
     }
 
