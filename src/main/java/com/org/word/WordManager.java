@@ -50,6 +50,8 @@ public class WordManager {
             else if(menu == 3){
                 wordCRUD.searchItem();
             }
+            else if(menu == 7){
+            }
         }
     }
 }

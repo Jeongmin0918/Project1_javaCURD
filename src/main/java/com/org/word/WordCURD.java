@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class WordCURD implements ICURD{
     ArrayList<Word> list;
-    Scanner s; //= new Scanner(System.in);
+    Scanner s;
     WordCURD(Scanner s){
        list = new ArrayList<>();
        this.s = s;

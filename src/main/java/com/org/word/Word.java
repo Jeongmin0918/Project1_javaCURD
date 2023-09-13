@@ -53,4 +53,5 @@ public class Word {
                 + String.format("%10s", word) + "  " + meaning;
         return str;
     }
+
 }
