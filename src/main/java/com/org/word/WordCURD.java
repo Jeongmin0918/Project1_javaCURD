@@ -59,9 +59,12 @@ public class WordCURD implements ICURD{
             System.out.print("\n==> 뜻 입력 : ");
             String meaning = s.nextLine();
 
-            list.get(idlist.get(num-1)).setMeaning(meaning);
+            if(idlist.size() < num || 1 > num) System.out.println("잘못된 번호입니다 !!!\n");
+            else{
+                list.get(idlist.get(num-1)).setMeaning(meaning);
 
-            System.out.println("\n단어가 수정되었습니다.\n");
+                System.out.println("\n단어가 수정되었습니다.\n");
+            }
         }
 
     }
@@ -79,14 +82,18 @@ public class WordCURD implements ICURD{
             int num = s.nextInt();
             s.nextLine();
 
-            System.out.print("\n==> 정말로 삭제하시겠습니까 (Y/n) : ");
-            String answer = s.nextLine();
+            if(idlist.size() < num || 1 > num) System.out.println("잘못된 번호입니다 !!!\n");
 
-            if(!answer.equalsIgnoreCase("y"))
-                System.out.println("\n취소되었습니다.\n");
             else{
-                list.remove((int)idlist.get(num-1));
-                System.out.println("\n단어가 삭제되었습니다.\n");
+                System.out.print("\n==> 정말로 삭제하시겠습니까 (Y/n) : ");
+                String answer = s.nextLine();
+
+                if(!answer.equalsIgnoreCase("y"))
+                    System.out.println("\n취소되었습니다.\n");
+                else{
+                    list.remove((int)idlist.get(num-1));
+                    System.out.println("\n단어가 삭제되었습니다.\n");
+                }
             }
         }
     }
