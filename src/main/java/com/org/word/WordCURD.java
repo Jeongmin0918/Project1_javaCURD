@@ -97,6 +97,7 @@ public class WordCURD implements ICURD{
             }
         }
     }
+    @Override
     public void levelSearch() {
         System.out.print("\n==> 난이도를 선택해주세요 (1, 2, 3) : ");
         int level = s.nextInt();
@@ -118,6 +119,7 @@ public class WordCURD implements ICURD{
         }
         System.out.println("------------------------------------------\n");
     }
+    @Override
     public ArrayList<Integer> listAll(String keyword) {
         ArrayList<Integer> idlist = new ArrayList<>();
         int j = 0;
@@ -135,6 +137,7 @@ public class WordCURD implements ICURD{
 
         return idlist;
     }
+    @Override
     public void listAll(int level) {
         int j = 0;
 
@@ -149,7 +152,7 @@ public class WordCURD implements ICURD{
         if(j == 0) System.out.println("존재하지 않는 레벨입니다 !!!");
         System.out.println("------------------------------------------\n");
     }
-
+    @Override
     public void loadFile(){
         try {
             BufferedReader br = new BufferedReader(new FileReader(fname));
@@ -177,7 +180,7 @@ public class WordCURD implements ICURD{
             throw new RuntimeException(e);
         }
     }
-
+    @Override
     public void saveFile() {
         try {
             PrintWriter pr = new PrintWriter(new FileWriter(fname));
